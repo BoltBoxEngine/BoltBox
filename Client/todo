@@ -1,0 +1,16 @@
+Current tasks:
+
+
+
+Future Tasks:
+Dissconnect clients on game close
+Add state machine for server management
+Allow html elements to be changed depending on state
+Get BootStrap(or other ui framework, more research is needed) working
+
+
+Completed Tasks:
+Allow connections from multiple ws clients
+Implement cookies for id and name using nanoid
+Improve concurrent ws client management
+Allow client reconnection

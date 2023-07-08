@@ -1,0 +1,34 @@
+@font-face {
+	font-family: IBMPlexSans-SemiBold;
+	font-weight: 600;
+	font-style: normal;
+	src: url(/IBMPlexSans-SemiBold.ttf);
+}
+
+:root {
+	--main-bg-color: #212529;
+    --main-text-color: #dee2e6;
+    --main-highlight-color: #6c757c;
+}
+
+body {
+	background-color: var(--main-bg-color);
+	padding: 0;
+	margin: 0;
+}
+
+.title {
+	color: var(--main-text-color);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: IBMPlexSans-SemiBold;
+	font-size: 15vw;
+}
+
+.headerBar {
+	background-color: var(main-highlight-color);
+	padding: 0;
+	text-align: center;
+}
+
+/*Colors used #212529, #6C757C, #DEE2E6 */

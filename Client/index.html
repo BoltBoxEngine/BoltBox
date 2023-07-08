@@ -3,16 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Hello World Simple App</title>
+        <link rel="stylesheet" href="styles.css">
+        <title>BoltBox</title>
     </head>
     <body>
-        <div>Hello World!</div>
+        
+        <div class="headerBar">
+            <div class = "title">BoltBox</div>
+        </div>
         <button id="connectButton">Connect</button>
         <button id="disconnectButton">Disconnect</button>
         <button id="sendButton">Send</button>
+        <input type="text" id="messageInput" placeholder="Hello World"/>
+
+        <div id="interfaceDiv">
+
+        </div>
+
     </body>
 
 
-    <script src="connectionManager.js" type="module"></script>
+    <script src="bundle.js" type="module"></script>
 </html>
