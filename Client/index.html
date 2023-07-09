@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>BoltBox</title>
-    </head>
-    <body>
-        
+	<head>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>BoltBox</title>
+	</head>
+	<body>
         <div class="headerBar">
-            <div class = "title">BoltBox</div>
+            <div class="title text">BoltBox</div>
         </div>
-        <button id="connectButton">Connect</button>
-        <button id="disconnectButton">Disconnect</button>
-        <button id="sendButton">Send</button>
-        <input type="text" id="messageInput" placeholder="Hello World"/>
+		<div class="content">
+			<div id="interfaceDiv"></div>
+		</div>
+	</body>
 
-        <div id="interfaceDiv">
-
-        </div>
-
-    </body>
-
-
-    <script src="bundle.js" type="module"></script>
+	<script src="bundle.js" type="module"></script>
 </html>

@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browserify Client/client.js -o Client/bundle.js && node index.js",
-    "bundle": "browserify Client/client.js -o Client/bundle.js -p tinyify && node index.js"
+    "begin": "browserify Client/client.js -o Client/bundle.js && lessc Client/styles.less Client/styles.css && node index.js",
+    "bundle": "browserify Client/client.js -o Client/bundle.js -p tinyify && lessc Client/styles.less Client/styles.css && node index.js",
+    "start": "nodemon --exec npm run begin --ext js,html,less --ignore Client/bundle.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "less": "^4.1.3",
     "tinyify": "^4.0.0"
   }
 }

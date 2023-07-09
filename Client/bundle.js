@@ -1,59 +1,78 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 let serverws = null;
+let clientID;
 
-const anime = require('animejs');
+const anime = require("animejs");
 
 
-connectButton.addEventListener("click", () => {
+//connect to ws on start
+connectWS();
+
+function connectWS() {
 	//lets ws work over localhost and ipv4 (an in theory dedicated dns but that will require more work)
 	let url = new URL(window.location.href);
-	url.port = '8080';
-	url.protocol = 'ws';
+	url.port = "8080";
+	url.protocol = "ws";
 	serverws = new WebSocket(url, 13);
-
 
 	//check if cookies have any data
 	let cookie = document.cookie;
-	cookie = cookie.split('data=')[1];
+	cookie = cookie.split("id=")[1];
+	cookie = cookie.split("; undefined")[0];
+	console.log(cookie);
+	clientID = cookie;
 	
+
 	serverws.onopen = () => {
 		console.log("Connected to server");
 	};
 
-    serverws.onmessage = (message) => {
-        console.log(`Received message: ${message.data}`);
+	serverws.onmessage = (message) => {
+		//console.log(`Received message: ${message.data}`);
 		handleData(message.data);
-    };
-    
-});
+	};
+}
 
-function handleData(data){
-	console.log(data);
+function handleData(data) {
 	data = JSON.parse(data);
 	//handle data from server
-	console.log(data);
-	console.log(data.type);
-	console.log(data.data);
-	if(data.type == "interface"){
+	if (data.type == "interface") {
 		//replace all html within the interface div with the html under data.data
 		interfaceDiv.innerHTML = data.data;
-		console.log(data.data);
 	}
 }
 
-sendButton.addEventListener("click", () => {
-    if(serverws == null || serverws.readyState === WebSocket.CLOSED) return;
-	console.log("Sending message to server");
-	//get value in messageInput
-	let message = messageInput.value;
-	serverws.send(message);
-});
+function messageFormater(type, data){
+	return JSON.stringify({
+		type:type,
+		data:data
+	});
+}
 
-disconnectButton.addEventListener("click", () => {
-    if(serverws == null) return;
-	console.log("Disconnecting from server");
-	serverws.close();
-});
+document.addEventListener( "click", clickListener );
+
+function clickListener(event){
+    var element = event.target;
+	//get element id
+	let id = element.id;
+
+	switch(id){
+		case "joinGame":
+			console.log(clientID);
+			serverws.send(messageFormater("joinGame", clientID));
+			break;
+		case "changeName":
+			//check if we are requesting the change name page or if we are submitting a name change
+			if(!document.getElementById("nameInput")){
+				serverws.send(messageFormater("navigate", "changeName"));
+			}else{
+				let name = document.getElementById("nameInput").value;
+				serverws.send(messageFormater("changeName", name));
+			}
+		default:
+			break;
+	}	
+}
 },{"animejs":2}],2:[function(require,module,exports){
 /*
  * anime.js v3.2.1

@@ -32,15 +32,40 @@ wss.on("connection", (ws) => {
 	//console.log("Client connected");
 	ws.isAlive = true;
 	ws.on("error", console.error);
-	ws.send(messageFormater("text", "Hello from server"));
+	//set client to pre lobby screen
+	updateClientInterface(ws, interfaces.preLobby);
+
+
+	//Handlers and other boring shit
 	ws.on("close", () => {
 		//console.log("Client disconnected");
 		ws.isAlive = false;
 	});
 
 	ws.on("message", (data) => {
-		//console.log(`client sent: %s`, data);
-		updateClientInterface(interfaces.idle);
+		data = JSON.parse(data);
+		switch(data.type){
+			case "joinGame":
+				console.log(data.data);
+				//associate ws client with clientID
+				ws.id = data.data;
+				updateClientInterface(ws, interfaces.lobby);
+				//TODO check if there are open slots for the client to join as a player, otherwise set as a spectator
+				break;
+			case "changeName":
+				ids[ws.id].name = data.data;
+				console.log("changed name to ", data.data);
+				updateClientInterface(ws, interfaces.lobby);
+				break;
+			case "navigate":
+				updateClientInterface(ws, interfaces[data.data]);
+				break;
+			default:
+				console.log("unknown type");
+				console.log(data);
+				break;
+		}
+
 	});
 });
 
@@ -51,12 +76,14 @@ function messageFormater(type, data){
 	});
 }
 
-function updateClientInterface(interfaceState){
-	//send the client the current state of the game
+function updateClientInterface(client, interfaceState){
+	client.send(messageFormater("interface", interfaceState));
+}
+
+function updateAllClientInterfaces(interfaceState){
 	wss.clients.forEach((client) => {
 		client.send(messageFormater("interface", interfaceState));
 	});
-	//console.log(interfaceState);
 }
 
 //serve basic html file to the client as well as script files
@@ -105,12 +132,11 @@ app.listen(port, () => {
 	console.log(`Now listening on port ${port}`);
 });
 
-let state = {
-	status: "waiting for players",
-};
-
 let interfaces = {
-	idle:"<div id='idle'>Waiting for players</div>",
-	lobby:"<div id='lobby'>Lobby</div>"
+	
+	preLobby:`<div class="text">ROOM CODE</div><div id="joinGame" class="button">JOIN GAME</div>`,
+	lobby:`<div class="text">WAITING FOR HOST</div><div id="changeName" class="button">CHANGE NAME</div>`,
+	changeName:`<input class="textInput" id="nameInput" type="text" onfocus="this.value=''" value="PLAYER" maxlength="14"></input><div id="changeName" class="button">CHANGE NAME</div>`
 
 }
+
