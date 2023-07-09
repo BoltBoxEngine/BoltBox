@@ -1,16 +1,16 @@
 {
   "name": "boltbox",
   "version": "1.0.0",
-  "description": "A collection of jackbox inspired party games",
+  "description": "A modular party game engine inspired by Jackbox",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "begin": "browserify Client/client.js -o Client/bundle.js && lessc Client/styles.less Client/styles.css && node index.js",
-    "bundle": "browserify Client/client.js -o Client/bundle.js -p tinyify && lessc Client/styles.less Client/styles.css && node index.js",
-    "start": "nodemon --exec npm run begin --ext js,html,less --ignore Client/bundle.js"
+    "begin": "npm run prepClient && npm run prepHost && node index.js",
+    "prepClient": "browserify Client/client.js -o Client/bundle.js && lessc Client/styles.less Client/styles.css",
+    "prepHost": "browserify Host/host.js -o Host/bundle.js && lessc Host/styles.less Host/styles.css",
+    "start": "nodemon --exec npm run begin --ext js,html,less --ignore Client/bundle.js --ignore Host/bundle.js"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "animejs": "^3.2.1",
     "cookie-parser": "^1.4.6",
@@ -25,5 +25,8 @@
   "devDependencies": {
     "less": "^4.1.3",
     "tinyify": "^4.0.0"
-  }
+  },
+  "git repository": "https://github.com/BurntIce16/BoltBox",
+  "keywords": ["game", "party", "jackbox", "boltbox"],
+  "author": "BurntIce16"
 }

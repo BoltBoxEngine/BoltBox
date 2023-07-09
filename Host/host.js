@@ -1,11 +1,9 @@
+//host screen manager
+//This will handle the game selection screen, and the interfaces for the games themselves
+
 let serverws = null;
 let clientID;
 
-const anime = require("animejs");
-const { resolve } = require("path");
-
-
-//connect to ws on start
 connectWS();
 
 function connectWS() {
@@ -25,6 +23,7 @@ function connectWS() {
 
 	serverws.onopen = () => {
 		console.log("Connected to server");
+        //TODO elevate this ws from a client to a host
 	};
 
 	serverws.onmessage = (message) => {
@@ -62,6 +61,8 @@ function clickListener(event){
 	//get element id
 	let id = element.id;
 
+
+    //TODO UPDATE THIS SECTION
 	switch(id){
 		case "joinGame":
 			console.log(clientID);

@@ -1,0 +1,92 @@
+@font-face {
+	font-family: IBMPlexSans-SemiBold;
+	font-weight: 600;
+	font-style: normal;
+	src: url(/IBMPlexSans-SemiBold.ttf);
+}
+
+
+/*Define input styles generically for modularity*/
+.text{
+	color: var(--main-text-color);
+    font-family: IBMPlexSans-SemiBold;
+    font-size: 10vw;
+}
+
+.button{
+	background-color: var(--main-highlight-color);
+	display: inline-block;
+	text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border-radius: 25px
+}
+
+@media screen {
+    .button{
+        .text;
+        .button;
+    }
+    .textInput{
+        .text;
+        .button;
+        .textInput;
+    }
+ }
+
+
+
+:root {
+	--main-bg-color: #212529;
+    --main-text-color: #dee2e6;
+    --main-highlight-color: #6c757c;
+}
+
+body {
+	background-color: var(--main-bg-color);
+	padding: 0;
+	margin: 0;
+    width: 100vw;
+	height: 100vh;
+}
+
+.content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#debug{
+    visibility: hidden;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: IBMPlexSans-SemiBold;
+	font-size: 15vw;
+	width: 100vw;
+}
+
+.headerBar {
+	background-color: var(--main-highlight-color);
+	padding: 0;
+	text-align: center;
+	position: absolute;
+}
+
+#interfaceDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.textInput{
+    width: 75vw;
+}

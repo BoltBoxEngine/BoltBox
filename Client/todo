@@ -1,19 +1,17 @@
 Current tasks:
-
+Design host frontend
 
 
 Future Tasks:
 Dissconnect clients on game close
 Add state machine for server management
-Allow html elements to be changed depending on state
-Make Modular system for submissions
 Track which clients are players and which are spectators
-Allow players to change name
-make client message processing object driven
-Make room selection
-Make input system as state agnostic as possible 
+Room verification Backend
+Implement Host frontend
+Host game selection screen
+Design at least one game and implement it
 
-
+Make games modules that can be imported from npm
 
 Completed Tasks:
 Allow connections from multiple ws clients
@@ -21,3 +19,9 @@ Implement cookies for id and name using nanoid
 Improve concurrent ws client management
 Allow client reconnection
 Design Basic Lobby UI Screens
+Make input system as state agnostic as possible 
+Make room selection ui
+make client message processing object driven
+Allow html elements to be changed depending on state
+Make Modular system for submissions
+Allow players to change name

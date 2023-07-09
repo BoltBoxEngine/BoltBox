@@ -14,6 +14,73 @@ app.use(cookieParser());
 //set the port to 3000
 const port = 3000;
 
+//serve basic html file to the client as well as script files
+app.get("/", (req, res) => {
+	let id = req.cookies.id;
+
+	//give client an id if they dont have one
+	if(req.cookies.id == undefined){
+		id = nanoid();
+		res.cookie(`id`, id);
+	}
+	//check if id is not in use, if so add it to the ids object
+	if(ids[id] === undefined){
+		addID(id);
+	};
+	//console.log(ids);
+	res.sendFile("Client/index.html", { root: __dirname });
+});
+
+//on get request to bundle.js, send the file to the client
+app.get("/bundle.js", (req, res) => {
+	res.sendFile("Client/bundle.js", { root: __dirname });
+});
+
+//on get request to client.js, send the file to the client
+app.get("/styles.css", (req, res) => {
+	res.sendFile("Client/styles.css", { root: __dirname });
+});
+
+//on get request to client.js, send the file to the client
+app.get("/IBMPlexSans-SemiBold.ttf", (req, res) => {
+	res.sendFile("Client/IBMPlexSans-SemiBold.ttf", { root: __dirname });
+});
+
+
+app.listen(port, () => {
+	//server starts listening for any attempts from a client to connect at port: {port}
+	console.log(`Server now listening on port ${port}`);
+});
+
+
+const hostApp = express();
+const hostPort = 3001;
+
+hostApp.get("/", (req, res) => {
+	res.sendFile("Host/index.html", { root: __dirname });
+});
+
+//on get request to bundle.js, send the file to the client
+hostApp.get("/bundle.js", (req, res) => {
+	res.sendFile("Host/bundle.js", { root: __dirname });
+});
+
+//on get request to client.js, send the file to the client
+hostApp.get("/styles.css", (req, res) => {
+	res.sendFile("Host/styles.css", { root: __dirname });
+});
+
+//on get request to client.js, send the file to the client
+hostApp.get("/IBMPlexSans-SemiBold.ttf", (req, res) => {
+	res.sendFile("Client/IBMPlexSans-SemiBold.ttf", { root: __dirname });
+});
+
+hostApp.listen(hostPort, () => {
+	//server starts listening for any attempts from a client to connect at port: {port}
+	console.log(`Host is now listening on port ${hostPort}`);
+});
+
+
 //create a new websocket server
 const wss = new WebSocketServer({ port: 8080 });
 
@@ -86,22 +153,6 @@ function updateAllClientInterfaces(interfaceState){
 	});
 }
 
-//serve basic html file to the client as well as script files
-app.get("/", (req, res) => {
-	let id = req.cookies.id;
-
-	//give client an id if they dont have one
-	if(req.cookies.id == undefined){
-		id = nanoid();
-		res.cookie(`id`, id);
-	}
-	//check if id is not in use, if so add it to the ids object
-	if(ids[id] === undefined){
-		addID(id);
-	};
-	console.log(ids);
-	res.sendFile("Client/index.html", { root: __dirname });
-});
 
 
 function addID(id, name = "player", player = false){
@@ -111,32 +162,11 @@ function addID(id, name = "player", player = false){
 	}
 }
 
-//on get request to bundle.js, send the file to the client
-app.get("/bundle.js", (req, res) => {
-	res.sendFile("Client/bundle.js", { root: __dirname });
-});
-
-//on get request to client.js, send the file to the client
-app.get("/styles.css", (req, res) => {
-	res.sendFile("Client/styles.css", { root: __dirname });
-});
-
-//on get request to client.js, send the file to the client
-app.get("/IBMPlexSans-SemiBold.ttf", (req, res) => {
-	res.sendFile("Client/IBMPlexSans-SemiBold.ttf", { root: __dirname });
-});
-
-
-app.listen(port, () => {
-	//server starts listening for any attempts from a client to connect at port: {port}
-	console.log(`Now listening on port ${port}`);
-});
-
 let interfaces = {
 	
-	preLobby:`<div class="text">ROOM CODE</div><div id="joinGame" class="button">JOIN GAME</div>`,
+	preLobby:`<input class="textInput" id="roomCode" type="text" onfocus="this.value=''" value="CODE" maxlength="4"><div id="joinGame" class="button">JOIN GAME</div>`,
 	lobby:`<div class="text">WAITING FOR HOST</div><div id="changeName" class="button">CHANGE NAME</div>`,
-	changeName:`<input class="textInput" id="nameInput" type="text" onfocus="this.value=''" value="PLAYER" maxlength="14"></input><div id="changeName" class="button">CHANGE NAME</div>`
+	changeName:`<input class="textInput" id="nameInput" type="text" onfocus="this.value=''" value="PLAYER" maxlength="10"></input><div id="changeName" class="button">CHANGE NAME</div>`
 
 }
 
