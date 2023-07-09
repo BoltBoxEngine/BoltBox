@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/BurntIce16/BoltBox">
-    <img src="images/logo.png" alt="Logo" style="max-width:100;width:100%">
+    <img src="images/logo.png" alt="Logo" style="max-width:100">
   </a>
 
   <h3 align="center">BoltBox</h3>
