@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55.93095mm"
+   height="48.437874mm"
+   viewBox="0 0 55.93095 48.437874"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="BoltBoxLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.3638608"
+     inkscape:cx="278.84626"
+     inkscape:cy="419.60713"
+     inkscape:window-width="2256"
+     inkscape:window-height="1394"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.768544,-83.233678)">
+    <path
+       id="path2966"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:round"
+       d="M 8.4864875,18.272738 -5.4961215,42.491415 8.4864875,66.710608 H 36.452222 L 50.434831,42.491415 36.452222,18.272738 Z M 22.469613,29.612098 A 12.879484,12.879484 0 0 1 35.348931,42.491415 12.879484,12.879484 0 0 1 22.469613,55.371249 12.879484,12.879484 0 0 1 9.5897794,42.491415 12.879484,12.879484 0 0 1 22.469613,29.612098 Z"
+       transform="translate(38.264664,64.960941)" />
+  </g>
+</svg>

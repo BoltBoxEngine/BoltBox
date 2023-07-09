@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="124.15848mm"
+   height="48.437874mm"
+   viewBox="0 0 124.15848 48.437874"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="BoltBoxLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.3638608"
+     inkscape:cx="278.84626"
+     inkscape:cy="419.60713"
+     inkscape:window-width="2256"
+     inkscape:window-height="1394"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs2">
+    <rect
+       x="346.32825"
+       y="321.35693"
+       width="408.16196"
+       height="212.55338"
+       id="rect3194" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.768544,-83.233678)">
+    <path
+       id="path2966"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:round"
+       d="M 8.4864875,18.272738 -5.4961215,42.491415 8.4864875,66.710608 H 36.452222 L 50.434831,42.491415 36.452222,18.272738 Z M 22.469613,29.612098 A 12.879484,12.879484 0 0 1 35.348931,42.491415 12.879484,12.879484 0 0 1 22.469613,55.371249 12.879484,12.879484 0 0 1 9.5897794,42.491415 12.879484,12.879484 0 0 1 22.469613,29.612098 Z"
+       transform="translate(38.264664,64.960941)"
+       inkscape:export-filename="..\cs\boltBox\images\logo.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.32472177,0,0,0.31534855,-54.729565,-15.249024)"
+       id="text3192"
+       style="font-style:normal;font-weight:normal;font-size:80px;line-height:0.9;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3194);fill:#000000;fill-opacity:1;stroke:none"
+       x="49.699951"
+       y="0"><tspan
+         x="448.20924"
+         y="380.34385"
+         id="tspan4652"><tspan
+           style="font-family:'Russo One';-inkscape-font-specification:'Russo One';text-align:center;text-anchor:middle"
+           id="tspan4650">BOLT
+</tspan></tspan><tspan
+         x="467.20926"
+         y="453.85309"
+         id="tspan4656"><tspan
+           style="font-family:'Russo One';-inkscape-font-specification:'Russo One';text-align:center;text-anchor:middle"
+           id="tspan4654">BOX</tspan></tspan></text>
+  </g>
+</svg>
