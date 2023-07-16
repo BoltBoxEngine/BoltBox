@@ -1,6 +1,6 @@
 {
   "name": "boltbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modular party game engine inspired by Jackbox",
   "main": "index.js",
   "scripts": {
@@ -15,11 +15,13 @@
     "animejs": "^3.2.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "ip": "^1.1.8",
     "jquery": "^3.7.0",
     "nanoid": "^4.0.2",
     "path": "^0.12.7",
-    "ws": "^8.13.0"
+    "ws": "^8.13.0",
+    "buzzbolt": "file:../BuzzBolt"
   },
   "type": "module",
   "devDependencies": {
@@ -27,6 +29,11 @@
     "tinyify": "^4.0.0"
   },
   "git repository": "https://github.com/BurntIce16/BoltBox",
-  "keywords": ["game", "party", "jackbox", "boltbox"],
+  "keywords": [
+    "game",
+    "party",
+    "jackbox",
+    "boltbox"
+  ],
   "author": "BurntIce16"
 }

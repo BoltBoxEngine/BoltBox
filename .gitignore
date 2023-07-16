@@ -1,1 +1,6 @@
 node_modules
+
+Client/bundle.js
+Client/styles.css
+Host/bundle.js
+Host/styles.css

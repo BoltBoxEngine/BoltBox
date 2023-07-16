@@ -1,5 +1,5 @@
 Current tasks:
-Design host frontend
+Make interfaces pull from Interfaces folder instead of strings in index.js
 
 
 Future Tasks:
@@ -10,7 +10,7 @@ Room verification Backend
 Implement Host frontend
 Host game selection screen
 Design at least one game and implement it
-
+Design host frontend
 Make games modules that can be imported from npm
 
 Completed Tasks:
